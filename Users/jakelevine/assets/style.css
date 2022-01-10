@@ -1,139 +1,358 @@
-#wrapper {
-    position: absolute;
-    left: 30%;
-    top: 20%;
-    width: 500px;
-    height: 500px;
-    border: 1px solid Green (55, 207, 101);
-}
-#startTime {
-    background-color: Green (0, 128, 6);
-    margin-left: 33%;
-    padding: 15px 32px;
-    font-size: 20px;
-    color: Black (12, 12, 12);
-}
-#questionsDiv {
-    margin: 20px;
+
+   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#currentTime {
-    float: right;
+body {
+    font-family: 'Merienda';font-size: 22px;
+    background-color: white;
 }
 
-#goBack {
-    background-color: Green (0, 128, 28);
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: Black (12, 11, 11);
-    top: 30%;
-    left: 55%;
-    width: auto;
-    text-align: center;
+header {
+    display: flex; /* Flex container to display the child elements as flex with space between and wrap */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    color: blueviolet;
+    height: 60px;
+    font-size: 2vw;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Merienda';font-size: 22px;
+  }
+
+.btnHeader {
+    border-radius: 10px;
+    background-color: white;
     text-decoration: none;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    color: blueviolet;
+    font-family: 'Merienda';font-size: 20px;
+}
+
+.btnHeader:hover {
+
+    background-color: pink;
+    
+  
+    
+}
+
+.btn {
+    border-radius: 12px;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: purple;
+    color: white;
+    font-family: 'Merienda';font-size: 10px;
 }
 
 
 
-#clear {
-    background-color: Green(0, 128, 38);
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: Black (8, 8, 8);
-    top: 30%;
-    right: 5%;
+#mainDiv {
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: 'Merienda';font-size: 22px;
+}
+
+
+
+
+#gridContainer {
+   /* width:65%; /* Contain the grid to a maximum of 80% of the flex wrapper */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 2fr 1fr;  /* Create a 4X4 grid of same size*/
+    grid-template-rows: repeat(10, 1fr); /* 4 rows of equal size */
+    gap: 10px 10px; /* Gap on x and y grid */
+    font-family: 'Merienda';font-size: 22px;
+}
+
+
+#questionDisplay {
     text-align: center;
+    align-self: baseline;
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 5;
+    place-self: center;
+    font-size: 30px;
 }
 
-button {
-    border-radius: 8px;
-}
-
-textarea {
-    width: 90%;
-    margin: 20px;
-}
-
-#Submit {
-    background-color: Green (36, 128, 0);
-    margin-left: 33%;
-    padding: 15px 32px;
-    font-size: 20px;
-    color:  Black (15, 15, 15);
-}
-
-label {
-    margin-right: 10px;
-}
-input {
-    margin-bottom: 20px;
-    width: 50%;
-    border: 1px solid Black (7, 7, 7);
-}
-
-h1 {
-    text-align: center;
-}
-
-li {
-    background-color:Green 0, 128, 49);
-    margin-top: 10px;
-    padding: 5px 15px;
-    width: 80%;
-    font-size: 18px;
-    color: Black (5, 5, 5);
-}
-
-#createDiv {
-    margin-top: 20px;
-    border-top: 1px solid Black (10, 10, 10);
-}
-
-
-@media screen and (max-width: 786px) {
-
-body {
-    max-width: 786px;
-}
-
-#wrapper {
-position: absolute;
-left: 20%;
-}
-
-a {
-margin-left: 20%;
-}
-#goBack {
+#finalScoreDisplay {
     
-    position: relative;
-    left: 55%;
+    grid-column: 1 / span 2;
+    grid-row: 6 / span 1;
+    font-size: 15px;
 }
 
-#clear {
+
+
+#enterInitials {
     
-    position: relative;
-    right: 5%;
+    grid-column: 1 / span 1;
+    grid-row: 7 / span 1;
+    font-size: 15px;
+}
+
+
+#enterInitialsTextArea {
+    
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+    font-size: 15px;
+    resize: none;
     
 }
+
+#submitScore {
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: purple;
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+}
+
+#start-quiz {
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: purple;
+    place-self: center;
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+}
+
+#answer1 {
+    grid-column: 1 / span 2;
+    grid-row: 6 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: purple;
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+    margin-left: 25px;
+}
+
+#answer2 {
+    grid-column: 1 / span 2;
+    grid-row: 7 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: purple;
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+    margin-left: 25px;
+    margin-left: 25px;
+
+}
+
+#answer3 {
+    grid-column: 1 / span 2;
+    grid-row: 8 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: purple;
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+    margin-left: 25px;
+}
+
+#answer4 {
+    grid-column: 1 / span 2;
+    grid-row: 9 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: purple;
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+    margin-left: 25px;
 }
 
 
-@media screen and (max-width: 640px) {
-
-body {
-    min-width: 640px;
-}
-
-#wrapper {
-position: absolute;
-left: 10%;
-}
-a {
-  margin-left: 10%;
-}
 
 
+
+
+#answer1:hover{
+    
+    background-color: pink;
+     
 }
+
+#answer2:hover{
+    
+    background-color: pink;
+  
+}
+
+#answer3:hover{
+    
+    background-color: pink;
+  
+}
+
+#answer4:hover{
+    
+    background-color: pink;
+  
+}
+
+#submitScore:hover{
+    
+    background-color: pink;
+  
+}
+
+
+
+#answerCorrectWrongGrid {
+    /*width:65%; /* Contain the grid to a maximum of 80% of the flex wrapper */
+    display: grid;
+    grid-template-columns: 4fr;  /* Create a 4X4 grid of same size*/
+    grid-template-rows: repeat(2, 1fr); /* 4 rows of equal size */
+    gap: 10px 10px; /* Gap on x and y grid */
+    font-family: 'Merienda';font-size: 22px;
+
+}
+
+#answerCorrectWrong {
+    text-align: left;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
+    
+}
+
+
+/* This will be applied on any screen smaller than 768px */
+@media screen and (max-width: 768px) {
+
+
+    
+    #answer1:hover{
+        
+        background-color: purple;
+        
+    }
+
+    #answer2:hover{
+        
+        background-color: purple;
+    
+    }
+
+    #answer3:hover{
+        
+        background-color: purple;
+    
+    }
+
+    #answer4:hover{
+        
+        background-color: purple;
+    
+    }
+
+    #submitScore:hover{
+        
+        background-color: purple;
+    
+    }
+
+
+
+    #questionDisplay {
+        font-size: 25px;
+    }
+    
+    #answer1 {
+        grid-column: 2 / span 2;
+    }
+    
+    #answer2 {
+        grid-column: 2 / span 2;
+           
+    }
+    
+    #answer3 {
+        grid-column: 2 / span 2;
+    }
+    
+    #answer4 {
+        grid-column: 2 / span 2;
+    }
+    
+  
+
+}
+
+
+   /* This will be applied on any screen smaller than 575px */
+@media screen and  (max-width: 575px) {
+
+    #answer1:hover{
+        
+        background-color: purple;
+        
+    }
+
+    #answer2:hover{
+        
+        background-color: purple;
+    
+    }
+
+    #answer3:hover{
+        
+        background-color: purple;
+    
+    }
+
+    #answer4:hover{
+        
+        background-color: purple;
+    
+    }
+
+    #submitScore:hover{
+        
+        background-color: purple;
+    
+    }
+
+
+    #mainDiv {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #questionDisplay {
+        grid-column: 2 / span 2;
+        font-size: 15px;
+    }
+  
+
+  }
